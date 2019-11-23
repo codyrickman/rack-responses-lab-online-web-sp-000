@@ -1,6 +1,6 @@
 class Application
   def call(env)
-    if (Time.now < 12)
+    if (Time.now.hour.between?(0,12))
       resp.write("Good Morning!")
     else
       resp.write("Good Afternoon!")
